@@ -49,7 +49,7 @@ footer {
     width: 100%;
 }
 profile {
-    background-image: url("C:\Users\kanao\OneDrive\画像\portfolio/background.jpg"); /* 画像のパスを指定 */
+    background-image: url("C:\Users\kanao\OneDrive\画像\portfolio/猫と鳩.jpg"); /* 画像のパスを指定 */
     background-size: cover;  /* 画像を全面に広げる */
     background-position: center; /* 画像を中央に配置 */
     background-repeat: no-repeat; /* 繰り返しを防ぐ */
