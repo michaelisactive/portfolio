@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ミッシェルのポートフォリオ</title>
     <link rel="stylesheet" href="style.css">
-  <script>
+ <script>
         // 背景色をランダムに変更する関数
         function getRandomColor() {
             return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
@@ -16,11 +16,11 @@
             document.body.style.backgroundColor = getRandomColor();
         }
 
-        // ページ読み込み時と一定時間ごとに背景色を変更
-        window.onload = function() {
+        // DOMが完全に読み込まれたら実行
+        document.addEventListener("DOMContentLoaded", function() {
             changeBackgroundColor();
             setInterval(changeBackgroundColor, 5000); // 5秒ごとに変更
-        };
+        });
     </script>
     
 </head>
