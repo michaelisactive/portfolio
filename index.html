@@ -5,6 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ミッシェルのポートフォリオ</title>
     <link rel="stylesheet" href="style.css">
+<script>
+        // 背景色をランダムに変更する関数
+        function getRandomColor() {
+            return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
+        }
+
+        // ページ読み込み時に背景色を変更
+        window.onload = function() {
+            document.body.style.backgroundColor = getRandomColor();
+        };
+    </script>
+    
 </head>
 <body>
     <header>
