@@ -5,24 +5,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ミッシェルのポートフォリオ</title>
     <link rel="stylesheet" href="style.css">
- <script>
-        // 背景色をランダムに変更する関数
-        function getRandomColor() {
-            return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
-        }
-
-        // 背景色を変更する関数
-        function changeBackgroundColor() {
-            document.body.style.backgroundColor = getRandomColor();
-        }
-
-        // DOMが完全に読み込まれたら実行
-        document.addEventListener("DOMContentLoaded", function() {
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            // 背景色をランダムに変更
+            function getRandomColor() {
+                return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
+            }
+            function changeBackgroundColor() {
+                $("body").css("background-color", getRandomColor());
+            }
             changeBackgroundColor();
-            setInterval(changeBackgroundColor, 5000); // 5秒ごとに変更
+            setInterval(changeBackgroundColor, 5000);
+
+            // スムーズスクロール
+            $("nav a").click(function(event) {
+                event.preventDefault();
+                let target = $(this).attr("href");
+                $("html, body").animate({
+                    scrollTop: $(target).offset().top
+                }, 800);
+            });
+
+            // 見出しのフェードイン
+            $("h2").css("opacity", 0).animate({ opacity: 1 }, 1500);
+
+            // プロジェクトリストのスライドイン
+            $("#projects ul li").css("opacity", 0);
+            $("#projects ul li").each(function(index) {
+                $(this).delay(500 * index).animate({ opacity: 1, marginLeft: "20px" }, 800);
+            });
         });
     </script>
-    
 </head>
 <body>
     <header>
@@ -43,31 +57,28 @@
 
     <section id="projects">
         <h2>プロジェクト</h2>
-
-
-
-
-
-
-
-
-
-<section>
-    <h2>入管法の外国語訳</h2>
-    <p>入管法の翻訳ページにアクセスできます：</p>
-    <ul>
-        <li><a href="korean.html">한국어 (韓国語)</a></li>
-        <li><a href="english.html">English (英語)</a></li>
-        <li><a href="chinese.html">中文 (中国語)</a></li>
-        <li><a href="french.html">Français (フランス語)</a></li>
-    </ul>
-</section>
-
+        <section>
+            <h2>入管法の外国語訳</h2>
+            <p>入管法の翻訳ページにアクセスできます：</p>
+            <ul>
+                <li><a href="korean.html">한국어 (韓国語)</a></li>
+                <li><a href="english.html">English (英語)</a></li>
+                <li><a href="chinese.html">中文 (中国語)</a></li>
+                <li><a href="french.html">Français (フランス語)</a></li>
+            </ul>
+        </section>
+    </section>
 
     <section id="contact">
         <h2>連絡先</h2>
         <p>Email: example@email.com</p>
     </section>
+
+    <footer>
+        <p>© 2025 ミッシェル</p>
+    </footer>
+</body>
+</html>
 
     <footer>
         <p>© 2025 ミッシェル</p>
